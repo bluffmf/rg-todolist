@@ -1,0 +1,45 @@
+
+<div class="rg-list">
+
+    <div class="rg-list-header" (mouseover)="mover()" (mouseout)="mout()">
+        <div class="rg-icon">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+        </div>
+        
+        <div class="rg-header" *ngIf="!editFlag">
+            {{list.name}}
+        </div>            
+        <div class="rg-header" *ngIf="editFlag">
+            <input type="text" #newName [(ngModel)]="list.name">
+        </div>
+
+        <div class="rg-right">
+            <div [hidden]="!over"><i class="fa fa-pencil" aria-hidden="true" (click)="editList()"></i></div>
+            <hr  [hidden]="!over" class="vertical-line">
+            <div [hidden]="!over"><i class="fa fa-trash-o" aria-hidden="true" (click)="delList()"></i></div>
+        </div>
+    </div>
+
+    <div class="rg-list-body">
+        <div class="rg-task-input-name">
+            <div class="rg-icon">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </div>
+            <div class="rg-header">
+                <input type="text" #taskName placeholder="Start typing here to create a task...">
+            </div>
+            <div class="rg-right">
+                <button (click)="addTask(taskName.value)">Add Task</button>
+            </div>
+        </div>
+
+
+        <div *ngFor="let task of list.tasks">
+            <rg-task [task]="task" [list]="list"></rg-task>
+        </div>
+        
+
+        <div class="rg-bottom-radius"></div>
+    </div>
+
+</div>

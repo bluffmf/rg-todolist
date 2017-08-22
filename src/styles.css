@@ -1,1 +1,297 @@
-/* You can add global styles to this file, and also import other style files */
+
+html {
+    height: 100%;
+    background-image: url('assets/background.jpg');
+    background-position: center;
+    /*background-repeat: no-repeat;*/
+    background-size: cover;    
+
+    font-family: 'Arial', serif;
+    font-style: normal;
+    font-variant: normal;    
+    line-height: normal;
+}
+
+.ng-busy,
+.ng-busy > *,
+.ng-busy > ng-component > * {
+  position: fixed;
+}
+
+.ng-busy-backdrop {
+    position: fixed;
+}
+
+
+/*==========================rg-title==========================*/
+.rg-title {
+    width: 300px;
+    height: 55px;
+    margin: 60px auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+.rg-title h1 {
+    margin: 0px 0px;
+    height: 35px;
+    color: #333333;
+}
+.rg-title h3 {
+    margin: 0px 0px;
+    height: 20px;
+    font-weight: 400;
+    color: #676464;
+}
+/*==========================rg-title==========================*/
+
+
+/*==========================rg-list==========================*/
+.rg-list {
+    width: 700px;
+    margin: 40px auto;
+    /*height: 50px;*/
+    border-top: 1px solid darkgrey;
+    border-right: 1px solid darkgrey;
+    border-left: 1px solid darkgrey;
+    border-bottom: 1px solid darkgrey;
+    box-shadow: 0px 0px 5px -1px darkgrey;
+    border-radius: 0 0 15px 15px;    
+}
+/*==========================rg-list==========================*/
+
+
+/*==========================rg-list-header==========================*/
+.rg-list-header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#5183BE), to(#375D9E));
+    background-image: -webkit-linear-gradient(bottom, #5183BE, #375D9E);
+    background-image: -moz-linear-gradient(bottom, #5183BE, #375D9E);
+    background-image: linear-gradient(to bottom, #5183BE, #375D9E);
+
+    height: 50px;
+    color: #fff; 
+    cursor: pointer;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.rg-list-header .rg-icon {    
+    width: 50px;
+    color: #284066;
+    font-size: 25px;
+    text-align: center;
+}
+
+.rg-list-header .rg-header {        
+    width: 530px;
+    text-shadow: 1px 1px 2px black;
+    overflow: hidden;
+}
+.rg-list-header .rg-header input {
+    width: 100%;
+    height: 20px;
+}
+
+.rg-list-header .rg-right {        
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 120px;
+    padding-right: 20px;
+}
+
+.rg-list-header .rg-right i {    
+    color: #98B0D2;
+    font-size: 18px;
+}
+
+.rg-list-header .rg-right hr.vertical-line {    
+    /*width: 1px;*/
+    color: #98B0D2;
+    height: 18px;
+    margin: 0px 10px;
+    padding: 0px;
+    cursor: auto;
+}
+/*==========================rg-list-header==========================*/
+
+
+/*==========================rg-task-input-name==========================*/
+.rg-task-input-name {        
+    height: 50px;
+    margin: 0px auto;
+    background: #cccccc;
+    border-bottom: 1px solid darkgrey;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.rg-task-input-name i {
+    width: 50px;
+    font-size: 25px;
+    text-align: center;
+    color: green;
+}
+
+.rg-task-input-name .rg-header {
+    width: 530px;
+}
+.rg-task-input-name input {
+    width: 516px;
+    height: 30px;    
+    color: #000;
+    padding: 0 0 0 14px;    
+    border: none;   
+    font: 14px Arial;
+}
+.rg-task-input-name input::placeholder {
+    color: #bbb;
+    font: 14px Arial;
+}
+
+.rg-task-input-name .rg-right {
+    width: 120px;
+}
+
+.rg-task-input-name button {
+    background-image: -webkit-linear-gradient(#96CDB0, #4D8464);
+    background-image: -moz-linear-gradient(#96CDB0, #4D8464);
+    background-image: -o-linear-gradient(#96CDB0, #4D8464);
+    background-image: linear-gradient(#96CDB0, #4D8464);
+
+    border: none;
+    padding: 0px;
+    height: 30px;
+    width: 100px;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px black;
+    border-radius: 0px 5px 5px 0px;
+}
+/*==========================rg-task-input-name==========================*/
+
+
+/*==========================rg-tasks==========================*/
+.rg-tasks {    
+    background: #fff;
+    line-height: 50px;      
+    border-bottom: 1px solid #E7EBEA;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;   
+}
+.rg-tasks.done {
+    background-color: lightcyan;
+}
+.rg-tasks:hover {
+    background: #FCFED5;
+}
+
+.rg-tasks .rg-check {
+    width: 50px;
+    text-align: center;
+    margin-right: 5px;    
+    border-right: 1px solid #EFDADF;    
+}
+.rg-tasks .rg-name {    
+    width: 530px;
+    padding-left: 15px;
+    color: #999999;
+    border-left: 1px solid #EFDADF;
+    border-right: 1px solid #E7EBEA; 
+    cursor: pointer;
+    overflow: hidden;
+    height: 50px;
+}
+
+.rg-tasks .rg-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+}
+
+.rg-tasks .rg-right i {
+    color: #B2B2A8;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.rg-tasks .rg-right hr.vertical-line {    
+    /*width: 1px;*/
+    color: #B2B2A8;
+    height: 10px;
+    margin: 0px 10px;
+    padding: 0px;
+    cursor: auto;
+}
+/*==========================rg-tasks==========================*/
+
+.rg-bottom-radius {
+    height: 15px;
+    background-color: #fff;
+    border-radius: 0 0 15px 15px;
+}
+
+
+
+/*==========================rg-footer==========================*/
+.rg-footer {
+    width: 210px;
+    margin: 50px auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.rg-footer .add-list button {
+    width: 210px;
+    height: 50px;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    background-image: -webkit-linear-gradient(#5183BE, #375D9E);
+    background-image: -moz-linear-gradient(#5183BE, #375D9E);
+    background-image: -o-linear-gradient(#5183BE, #375D9E);
+    background-image: linear-gradient(#5183BE, #375D9E);
+
+    border: 1px groove #375D9E;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.rg-footer .add-list button .fa-plus {
+    color: #354B6F;
+    font-size: 25px;
+    /*width: 25px;
+    height: 25px;*/
+}
+
+.rg-footer .add-list .add {
+    margin-left: 15px;
+}
+
+.rg-footer .copy {
+    margin-top: 40px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 100;
+}
+/*==========================rg-footer==========================*/

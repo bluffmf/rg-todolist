@@ -1,0 +1,29 @@
+
+<div class="rg-tasks" [ngClass]="{'done': task.complete}" (mouseover)="mover()" (mouseout)="mout()">
+    
+    <div class="rg-check">
+        <input type="checkbox" [(ngModel)]="task.complete" (change)="updateTask()" >
+    </div>
+
+
+    <div class="rg-name" *ngIf="!editFlag" (click)="editTask()">
+        {{task.name}}
+    </div>
+    <div class="rg-name" *ngIf="editFlag">
+        <input type="text" #newName [ngModel]="task.name">
+    </div>
+
+    <div class="rg-right" *ngIf="!editFlag">
+        <div [hidden]="!over"><i class="fa fa-pencil" aria-hidden="true" (click)="editTask()"></i></div>
+        <hr  [hidden]="!over" class="vertical-line">
+        <div [hidden]="!over"><i [hidden]="over" class="fa fa-trash-o" aria-hidden="true" (click)="deleteTask()"></i></div>
+    </div>
+    <div class="rg-right" *ngIf="editFlag">
+        <!--<i class="fa fa-check-circle-o" aria-hidden="true" (click)="sendTask()"></i>-->
+        <i class="fa fa-thumbs-o-up" aria-hidden="true" (click)="sendTask()"></i>
+        <hr class="vertical-line">
+        <!--<i class="fa fa-times-circle-o" aria-hidden="true" (click)="editTask()"></i>-->
+        <i class="fa fa-thumbs-o-down" aria-hidden="true" (click)="editTask()"></i>
+    </div>
+
+</div>
