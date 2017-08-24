@@ -50,7 +50,7 @@ export class ListService {
           .put(url, JSON.stringify(list), {headers: this.headers})
           .toPromise()
           .then(() => list)
-          .then( () => this.changedList.emit() )
+          //.then( () => this.changedList.emit() )
           .catch(this.handleError);
     }
 

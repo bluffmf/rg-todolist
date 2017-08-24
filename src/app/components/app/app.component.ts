@@ -27,7 +27,7 @@ export class AppComponent {
   }
 
   addList() {    
-    this.listService.addList();
+    this.listService.addList();    
   }
 
 }
