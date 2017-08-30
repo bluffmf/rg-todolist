@@ -1,7 +1,6 @@
-
 import { TaskModel } from './task.model';
 
-export class ListModel {
+export class NoteModel {
     constructor(
         public id: number,
         public name: string,

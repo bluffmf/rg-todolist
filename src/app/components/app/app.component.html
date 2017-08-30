@@ -1,27 +1,17 @@
-
-<!-- Simple syntax -->
-<div [ngBusy]="busy"></div>
-
-
 <div class="rg-title">
-    <h1>SIMPLE TODO LISTS</h1>
-    <h3>FROM RUBY GARAGE</h3>
+    <h1>{{headerMainText}}</h1>
+    <h3>{{headerFromText}}</h3>
 </div>
-
-
-<div *ngFor="let list of lists">
-    <rg-list [list]="list"></rg-list>
+<div *ngFor="let note of notes">
+    <note [note]="note"></note>
 </div>
-
-
-
 <div class="rg-footer">
     <div class="add-list">
-        <button (click)="addList()">
+        <button (click)="createNote()">
             <div><i class="fa fa-plus" aria-hidden="true"></i></div>
-            <div class="add">Add TODO List</div>
+            <div class="add">{{addButtonText}}</div>
         </button>
     </div>
 
-    <div class="copy">&copy; Ruby Garage</div>
+    <div class="copy">&copy; {{footerText}}</div>
 </div>

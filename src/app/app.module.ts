@@ -2,34 +2,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {BusyModule} from 'angular2-busy';
-
-// Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './services/in-memory-data.service';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './components/app/app.component';
-import { ListComponent } from './components/list/list.component';
+import { NoteComponent } from './components/note/note.component';
 import { TaskComponent } from './components/task/task.component';
-import { ListService }          from './services/list.service';
+import { NoteService }          from './services/note.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent,
+    NoteComponent,
     TaskComponent
   ],
   imports: [    
     BrowserModule,
-    BrowserAnimationsModule,
-    BusyModule,
+    BrowserAnimationsModule,    
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
-  providers: [ListService],
+  providers: [NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

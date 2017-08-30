@@ -6,19 +6,19 @@
     </div>
 
 
-    <div class="rg-name" *ngIf="!editFlag" (click)="editTask()">
+    <div class="rg-name" *ngIf="!editable" (click)="editTask()">
         {{task.name}}
     </div>
-    <div class="rg-name" *ngIf="editFlag">
-        <input type="text" #newName [ngModel]="task.name">
+    <div class="rg-name" *ngIf="editable">
+        <input type="text" #taskName [ngModel]="task.name">
     </div>
 
-    <div class="rg-right" *ngIf="!editFlag">
-        <div [hidden]="!over"><i class="fa fa-pencil" aria-hidden="true" (click)="editTask()"></i></div>
-        <hr  [hidden]="!over" class="vertical-line">
-        <div [hidden]="!over"><i [hidden]="over" class="fa fa-trash-o" aria-hidden="true" (click)="deleteTask()"></i></div>
+    <div class="rg-right" *ngIf="!editable">
+        <div [hidden]="!overable"><i class="fa fa-pencil" aria-hidden="true" (click)="editTask()"></i></div>
+        <hr  [hidden]="!overable" class="vertical-line">
+        <div [hidden]="!overable"><i [hidden]="overable" class="fa fa-trash-o" aria-hidden="true" (click)="deleteTask()"></i></div>
     </div>
-    <div class="rg-right" *ngIf="editFlag">
+    <div class="rg-right" *ngIf="editable">
         <!--<i class="fa fa-check-circle-o" aria-hidden="true" (click)="sendTask()"></i>-->
         <i class="fa fa-thumbs-o-up" aria-hidden="true" (click)="sendTask()"></i>
         <hr class="vertical-line">

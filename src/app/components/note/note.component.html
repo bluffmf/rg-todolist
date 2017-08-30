@@ -1,0 +1,45 @@
+
+<div class="rg-list">
+
+    <div class="rg-list-header" (mouseover)="mover()" (mouseout)="mout()">
+        <div class="rg-icon">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+        </div>
+        
+        <div class="rg-header" *ngIf="!editable">
+            {{note.name}}
+        </div>            
+        <div class="rg-header" *ngIf="editable">
+            <input type="text" #noteName [(ngModel)]="note.name">
+        </div>
+
+        <div class="rg-right">
+            <div [hidden]="!overable"><i class="fa fa-pencil" aria-hidden="true" (click)="updateNote()"></i></div>
+            <hr  [hidden]="!overable" class="vertical-line">
+            <div [hidden]="!overable"><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteNote()"></i></div>
+        </div>
+    </div>
+
+    <div class="rg-list-body">
+        <div class="rg-task-input-name">
+            <div class="rg-icon">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </div>
+            <div class="rg-header">
+                <input type="text" #taskCreator placeholder="Start typing here to create a task...">
+            </div>
+            <div class="rg-right">
+                <button (click)="addTask(taskCreator.value)">Add Task</button>
+            </div>
+        </div>
+
+
+        <div *ngFor="let task of note.tasks">
+            <task [task]="task" [note]="note"></task>
+        </div>
+        
+
+        <div class="rg-bottom-radius"></div>
+    </div>
+
+</div>

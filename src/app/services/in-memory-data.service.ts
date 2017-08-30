@@ -1,11 +1,11 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { ListModel } from './../models/list.model';
+import { NoteModel } from './../models/note.model';
 import { TaskModel } from './../models/task.model';
 
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const heroes = [
+    const Heroes = [
         { id: 0,  name: 'Zero' },
         { id: 11, name: 'Mr. Nice' },
         { id: 12, name: 'Narco' },
@@ -19,8 +19,8 @@ export class InMemoryDataService implements InMemoryDbService {
         { id: 20, name: 'Tornado' }
     ];
 
-    const LISTS = [
-        new ListModel(
+    const Notes = [
+        new NoteModel(
             1,
             'Complete the test task for Ruby Garage', 
             [
@@ -29,7 +29,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 new TaskModel('Go to Ruby Garage', false)      
             ]
         ),
-        new ListModel(
+        new NoteModel(
             2,
             'second', 
             [
@@ -39,6 +39,6 @@ export class InMemoryDataService implements InMemoryDbService {
         )
     ];
 
-    return {heroes, LISTS};
+    return {Heroes, Notes};
   }
 }

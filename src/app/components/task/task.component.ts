@@ -1,53 +1,50 @@
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 import { TaskModel } from './../../models/task.model';
-import { ListModel } from './../../models/list.model';
-import { ListService } from './../../services/list.service';
+import { NoteModel } from './../../models/note.model';
+import { NoteService } from './../../services/note.service';
 
 @Component({
-  selector: 'rg-task',
+  selector: 'task',
   templateUrl: './task.component.html'  
 })
 export class TaskComponent {
   
+  overable: boolean = false;
+  editable: boolean = false;
+  @ViewChild('taskName') taskName: ElementRef;
   @Input() task: TaskModel;
-  @Input() list: ListModel;
-  editFlag: boolean;
-  over: boolean;
-  @ViewChild('newName') newName: ElementRef;
+  @Input() note: NoteModel;
+  
 
-  constructor(private listService: ListService) {      
-      this.editFlag = false;
-      this.over = false;
-  }
-
+  constructor(private noteService: NoteService) {  }
 
   editTask() {
-    this.editFlag = !this.editFlag;
+    this.editable = !this.editable;
   }
 
   sendTask() {
-    this.task.name = this.newName.nativeElement.value;
+    this.task.name = this.taskName.nativeElement.value;
     this.updateTask();
     this.editTask();
   }
 
   updateTask() {
-    this.listService.updateList(this.list);
+    this.noteService.updateNote(this.note);
   }
 
   deleteTask() {
-    let index = this.list.tasks.indexOf(this.task);
-    this.list.tasks.splice(index, 1);
+    let index = this.note.tasks.indexOf(this.task);
+    this.note.tasks.splice(index, 1);
 
-    this.listService.updateList(this.list);
+    this.noteService.updateNote(this.note);
   }
 
   mover() {
-    this.over = true;
+    this.overable = true;
   }
 
   mout() {
-    this.over = false;
+    this.overable = false;
   }
 
   

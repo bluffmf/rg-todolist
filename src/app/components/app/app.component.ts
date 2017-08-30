@@ -1,33 +1,30 @@
 import { Component } from '@angular/core';
-import { ListModel } from './../../models/list.model';
-import { ListService } from './../../services/list.service';
+import { NoteModel } from './../../models/note.model';
+import { NoteService } from './../../services/note.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'  
 })
 export class AppComponent {
-  title = 'Todo';
-  lists: ListModel[];
-  busy: Promise<any>;
+  notes: NoteModel[]; 
+  headerMainText: string = 'SIMPLE TODO LISTS'; 
+  headerFromText: string = 'FROM RUBY GARAGE';
+  addButtonText: string = 'Add TODO List';
+  footerText: string = 'Ruby Garage';
 
-  constructor(private listService: ListService) {  }
+  constructor(private noteService: NoteService) {  }
 
   ngOnInit() {
-    this.busy = this.listService.getLists()
-      .then(lists => this.lists = lists);
+    this.noteService.getNotes().then(notes => this.notes = notes);
 
-    this.listService.changedList.subscribe(
-      () => {
-        this.busy = this.listService.getLists()
-          .then(lists => this.lists = lists);
-      }
-    );
-  
+    this.noteService.eeNotes.subscribe(() => {
+      this.noteService.getNotes().then(notes => this.notes = notes);
+    });  
   }
 
-  addList() {    
-    this.listService.addList();    
+  createNote() {    
+    this.noteService.createNote();    
   }
 
 }
