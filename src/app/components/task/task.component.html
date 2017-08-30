@@ -1,28 +1,26 @@
 
-<div class="rg-tasks" [ngClass]="{'done': task.complete}" (mouseover)="mover()" (mouseout)="mout()">
+<div class="tasks-app" [ngClass]="{'done': task.complete}" (mouseover)="mover()" (mouseout)="mout()">
     
-    <div class="rg-check">
+    <div class="check-task">
         <input type="checkbox" [(ngModel)]="task.complete" (change)="updateTask()" >
     </div>
 
 
-    <div class="rg-name" *ngIf="!editable" (click)="editTask()">
+    <div class="name-task" *ngIf="!editable" (click)="editTask()">
         {{task.name}}
     </div>
-    <div class="rg-name" *ngIf="editable">
+    <div class="name-task" *ngIf="editable">
         <input type="text" #taskName [ngModel]="task.name">
     </div>
 
-    <div class="rg-right" *ngIf="!editable">
+    <div class="right-app" *ngIf="!editable">
         <div [hidden]="!overable"><i class="fa fa-pencil" aria-hidden="true" (click)="editTask()"></i></div>
         <hr  [hidden]="!overable" class="vertical-line">
         <div [hidden]="!overable"><i [hidden]="overable" class="fa fa-trash-o" aria-hidden="true" (click)="deleteTask()"></i></div>
     </div>
-    <div class="rg-right" *ngIf="editable">
-        <!--<i class="fa fa-check-circle-o" aria-hidden="true" (click)="sendTask()"></i>-->
+    <div class="right-app" *ngIf="editable">        
         <i class="fa fa-thumbs-o-up" aria-hidden="true" (click)="sendTask()"></i>
-        <hr class="vertical-line">
-        <!--<i class="fa fa-times-circle-o" aria-hidden="true" (click)="editTask()"></i>-->
+        <hr class="vertical-line">        
         <i class="fa fa-thumbs-o-down" aria-hidden="true" (click)="editTask()"></i>
     </div>
 

@@ -1,12 +1,12 @@
-<div class="rg-title">
+<div class="title-app">
     <h1>{{headerMainText}}</h1>
     <h3>{{headerFromText}}</h3>
 </div>
 <div *ngFor="let note of notes">
     <note [note]="note"></note>
 </div>
-<div class="rg-footer">
-    <div class="add-list">
+<div class="footer-app">
+    <div class="add-note">
         <button (click)="createNote()">
             <div><i class="fa fa-plus" aria-hidden="true"></i></div>
             <div class="add">{{addButtonText}}</div>

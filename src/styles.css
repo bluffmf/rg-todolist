@@ -2,8 +2,7 @@
 html {
     height: 100%;
     background-image: url('assets/background.jpg');
-    background-position: center;
-    /*background-repeat: no-repeat;*/
+    background-position: center;    
     background-size: cover;    
 
     font-family: 'Arial', serif;
@@ -12,19 +11,8 @@ html {
     line-height: normal;
 }
 
-.ng-busy,
-.ng-busy > *,
-.ng-busy > ng-component > * {
-  position: fixed;
-}
 
-.ng-busy-backdrop {
-    position: fixed;
-}
-
-
-/*==========================rg-title==========================*/
-.rg-title {
+.title-app {
     width: 300px;
     height: 55px;
     margin: 60px auto;
@@ -32,22 +20,22 @@ html {
     font-weight: 600;
     font-size: 15px;
 }
-.rg-title h1 {
+.title-app h1 {
     margin: 0px 0px;
     height: 35px;
     color: #333333;
 }
-.rg-title h3 {
+.title-app h3 {
     margin: 0px 0px;
     height: 20px;
     font-weight: 400;
     color: #676464;
 }
-/*==========================rg-title==========================*/
 
 
-/*==========================rg-list==========================*/
-.rg-list {
+
+
+.note-app {
     width: 700px;
     margin: 40px auto;
     /*height: 50px;*/
@@ -58,11 +46,11 @@ html {
     box-shadow: 0px 0px 5px -1px darkgrey;
     border-radius: 0 0 15px 15px;    
 }
-/*==========================rg-list==========================*/
 
 
-/*==========================rg-list-header==========================*/
-.rg-list-header {
+
+
+.note-app-header {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#5183BE), to(#375D9E));
     background-image: -webkit-linear-gradient(bottom, #5183BE, #375D9E);
     background-image: -moz-linear-gradient(bottom, #5183BE, #375D9E);
@@ -78,23 +66,23 @@ html {
     justify-content: flex-start;
 }
 
-.rg-list-header .rg-icon {    
+.note-app-header .icon-app {    
     width: 50px;
     color: #284066;
     font-size: 25px;
     text-align: center;
 }
 
-.rg-list-header .rg-header {        
+.note-app-header .header-app {        
     width: 530px;    
     overflow: hidden;
 }
-.rg-list-header .rg-header input {
+.note-app-header .header-app input {
     width: 100%;
     height: 20px;
 }
 
-.rg-list-header .rg-right {        
+.note-app-header .right-app {        
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -104,12 +92,12 @@ html {
     padding-right: 20px;
 }
 
-.rg-list-header .rg-right i {    
+.note-app-header .right-app i {    
     color: #98B0D2;
     font-size: 18px;
 }
 
-.rg-list-header .rg-right hr.vertical-line {    
+.note-app-header .right-app hr.vertical-line {    
     /*width: 1px;*/
     color: #98B0D2;
     height: 18px;
@@ -117,11 +105,11 @@ html {
     padding: 0px;
     cursor: auto;
 }
-/*==========================rg-list-header==========================*/
 
 
-/*==========================rg-task-input-name==========================*/
-.rg-task-input-name {        
+
+
+.task-input-name {        
     height: 50px;
     margin: 0px auto;
     background: #cccccc;
@@ -133,17 +121,17 @@ html {
     justify-content: flex-start;
 }
 
-.rg-task-input-name i {
+.task-input-name i {
     width: 50px;
     font-size: 25px;
     text-align: center;
     color: green;
 }
 
-.rg-task-input-name .rg-header {
+.task-input-name .header-app {
     width: 530px;
 }
-.rg-task-input-name input {
+.task-input-name input {
     width: 516px;
     height: 30px;    
     color: #000;
@@ -151,20 +139,20 @@ html {
     border: none;   
     font: 14px Arial;
 }
-.rg-task-input-name input::placeholder {
+.task-input-name input::placeholder {
     color: #bbb;
     font: 14px Arial;
 }
 
-.rg-task-input-name .rg-right {
+.task-input-name .right-app {
     width: 120px;
 }
 
-.rg-task-input-name button {
-    background-image: -webkit-linear-gradient(#96CDB0, #4D8464);
-    background-image: -moz-linear-gradient(#96CDB0, #4D8464);
-    background-image: -o-linear-gradient(#96CDB0, #4D8464);
-    background-image: linear-gradient(#96CDB0, #4D8464);
+.task-input-name button {
+    background-image: -webkit-linear-gradient(#96CDB0, #4D7122);
+    background-image: -moz-linear-gradient(#96CDB0, #4D7122);
+    background-image: -o-linear-gradient(#96CDB0, #4D7122);
+    background-image: linear-gradient(#96CDB0, #4D7122);
 
     border: none;
     padding: 0px;
@@ -175,11 +163,11 @@ html {
     text-shadow: 1px 1px 2px black;
     border-radius: 0px 5px 5px 0px;
 }
-/*==========================rg-task-input-name==========================*/
 
 
-/*==========================rg-tasks==========================*/
-.rg-tasks {    
+
+
+.tasks-app {    
     background: #fff;
     line-height: 50px;      
     border-bottom: 1px solid #E7EBEA;
@@ -189,20 +177,20 @@ html {
     align-items: center;
     justify-content: flex-start;   
 }
-.rg-tasks.done {
+.tasks-app.done {
     background-color: lightcyan;
 }
-.rg-tasks:hover {
+.tasks-app:hover {
     background: #FCFED5;
 }
 
-.rg-tasks .rg-check {
+.tasks-app .check-task {
     width: 50px;
     text-align: center;
     margin-right: 5px;    
     border-right: 1px solid #EFDADF;    
 }
-.rg-tasks .rg-name {    
+.tasks-app .name-task {    
     width: 530px;
     padding-left: 15px;
     color: #999999;
@@ -213,7 +201,7 @@ html {
     height: 50px;
 }
 
-.rg-tasks .rg-right {
+.tasks-app .right-app {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -222,13 +210,13 @@ html {
     width: 120px;
 }
 
-.rg-tasks .rg-right i {
+.tasks-app .right-app i {
     color: #B2B2A8;
     font-size: 16px;
     cursor: pointer;
 }
 
-.rg-tasks .rg-right hr.vertical-line {    
+.tasks-app .right-app hr.vertical-line {    
     /*width: 1px;*/
     color: #B2B2A8;
     height: 10px;
@@ -236,9 +224,9 @@ html {
     padding: 0px;
     cursor: auto;
 }
-/*==========================rg-tasks==========================*/
 
-.rg-bottom-radius {
+
+.bottom-radius {
     height: 15px;
     background-color: #fff;
     border-radius: 0 0 15px 15px;
@@ -246,8 +234,8 @@ html {
 
 
 
-/*==========================rg-footer==========================*/
-.rg-footer {
+
+.footer-app {
     width: 210px;
     margin: 50px auto;
     text-align: center;
@@ -255,7 +243,7 @@ html {
     font-size: 15px;
 }
 
-.rg-footer .add-list button {
+.footer-app .add-note button {
     width: 210px;
     height: 50px;
     cursor: pointer;
@@ -276,21 +264,20 @@ html {
     font-size: 18px;
 }
 
-.rg-footer .add-list button .fa-plus {
+.footer-app .add-note button .fa-plus {
     color: #354B6F;
     font-size: 25px;
     /*width: 25px;
     height: 25px;*/
 }
 
-.rg-footer .add-list .add {
+.footer-app .add-note .add {
     margin-left: 15px;
 }
 
-.rg-footer .copy {
+.footer-app .copy {
     margin-top: 40px;
     color: #fff;
     font-size: 14px;
     font-weight: 100;
 }
-/*==========================rg-footer==========================*/
